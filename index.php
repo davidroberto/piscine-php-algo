@@ -1,40 +1,50 @@
+<html>
+	
+<head>
+	<title>Mon super site de recettes</title>
+</head>
+
+<body>
+
 <?php
-	// je créé une variable "name" dont la valeur est david
-	$name = "david";
-	$bestFood = "carbo";
-	$age = 35;
-	$loveCss = false;
 
-	$languages = ["PHP", "Node.js", "Rust"];
-
+$loggedUser = "David Robert";
+$isProfileCompleted = false;
+$recipes = ["pizzas", "carbo", "risotto"];
 ?>
 
+<header>
 
-<!-- je demande au php de générer du html avec un H1, incluant Bonjour, suivi de la valeur de la variable
- $name, suivi de la fermeture de la balise H1. Pour faire une instruction php dans du html, je reouvre la balise php.
-echo en php permet d'afficher une valeur.
-  -->
-<h1>Bonjour <?php echo $name; ?> et j'aime les <?php echo $bestFood; ?>. Mon âge : <?php echo $age; ?>.</h1>
+<h2>
+	
+	Vous êtes connecté en tant que : <?php echo $loggedUser; ?>.
 
 
-<p> CSS : 
-
-	<!-- j'utilise un if en php, et en fonction de la valeur de la variable $loveCss, j'affiche un coeur ou une bombe -->
-	<?php if ($loveCss === true) {
-		echo "♥";
+	<?php if ($isProfileCompleted === true) {
+		echo " Votre profil est complété";
 	} else {
-		echo "💣";
+		echo " Votre profil n'est pas complété";
 	} ?>
 
-</p>
+</h2>
+</header>
 
-<p>Languages utilisés : 
+<main>
 
-<!-- j'utilise foreach pour faire une boucle sur la variable $languages, contenant un tableau
- Pour chaque élément dans le tableau, j'affiche l'élément
-  -->
-<?php foreach($languages as $language) {
-	echo $language;
+<h1>Les recettes de Roberto</h1>
+<img src="https://www.petitsplatsentreamis.com/wp-content/uploads/2022/01/Cuisine-du-monde-20-idees-de-recettes-internationales.jpg" alt="recettes" />
+
+
+<ul>
+
+<?php foreach($recipes as $recipe) {
+	echo "<li>" . $recipe . "</li>";
 } ?>
 
-</p>
+</ul>
+
+</main>
+
+</body>
+
+</html>
