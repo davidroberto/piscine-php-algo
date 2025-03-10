@@ -4,6 +4,9 @@
 	$bestFood = "carbo";
 	$age = 35;
 	$loveCss = false;
+
+	$languages = ["PHP", "Node.js", "Rust"];
+
 ?>
 
 
@@ -16,11 +19,22 @@ echo en php permet d'afficher une valeur.
 
 <p> CSS : 
 
-<!-- j'utilise un if en php, et en fonction de la valeur de la variable $loveCss, j'affiche un coeur ou une bombe -->
-<?php if ($loveCss === true) {
-	echo "♥";
-} else {
-	echo "💣";
+	<!-- j'utilise un if en php, et en fonction de la valeur de la variable $loveCss, j'affiche un coeur ou une bombe -->
+	<?php if ($loveCss === true) {
+		echo "♥";
+	} else {
+		echo "💣";
+	} ?>
+
+</p>
+
+<p>Languages utilisés : 
+
+<!-- j'utilise foreach pour faire une boucle sur la variable $languages, contenant un tableau
+ Pour chaque élément dans le tableau, j'affiche l'élément
+  -->
+<?php foreach($languages as $language) {
+	echo $language;
 } ?>
 
 </p>
