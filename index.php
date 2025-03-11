@@ -1,47 +1,53 @@
+<!DOCTYPE html>
 <html>
 	
 <head>
 	<title>Mon super site de recettes</title>
+	<link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
 
+
 <?php
 
-$loggedUser = "David Robert";
-$isProfileCompleted = false;
-$recipes = ["pizzas", "carbo", "risotto"];
+$articles = [
+	[
+		"title" => "Article 1",
+		"content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex amet quia officia odit cumque magni, quibusdam aut optio, architecto voluptatibus cupiditate quos error tenetur quae? Exercitationem veniam minus excepturi. Voluptatum."
+	],
+	[
+		"title" => "Article 2",
+		"content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex amet quia officia odit cumque magni, quibusdam aut optio, architecto voluptatibus cupiditate quos error tenetur quae? Exercitationem veniam minus excepturi. Voluptatum."
+	],
+	[
+		"title" => "Article 3",
+		"content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex amet quia officia odit cumque magni, quibusdam aut optio, architecto voluptatibus cupiditate quos error tenetur quae? Exercitationem veniam minus excepturi. Voluptatum."
+	],
+	[
+		"title" => "Article 4",
+		"content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex amet quia officia odit cumque magni, quibusdam aut optio, architecto voluptatibus cupiditate quos error tenetur quae? Exercitationem veniam minus excepturi. Voluptatum."
+	]
+];
+
+
 ?>
 
-<header>
-
-<h2>
-	
-	Vous êtes connecté en tant que : <?php echo $loggedUser; ?>.
-
-
-	<?php if ($isProfileCompleted === true) {
-		echo " Votre profil est complété";
-	} else {
-		echo " Votre profil n'est pas complété";
-	} ?>
-
-</h2>
-</header>
 
 <main>
 
-<h1>Les recettes de Roberto</h1>
-<img src="https://www.petitsplatsentreamis.com/wp-content/uploads/2022/01/Cuisine-du-monde-20-idees-de-recettes-internationales.jpg" alt="recettes" />
+	<h1>Le blog de Roberto</h1>
 
 
-<ul>
+	<?php foreach($articles as $article) { ?>
 
-<?php foreach($recipes as $recipe) {
-	echo "<li>" . $recipe . "</li>";
-} ?>
+	<!-- j'utilise la clé title pour afficher la valeur du titre dans le tableau -->
+		<h1><?php echo $article["title"]; ?></h1>
 
-</ul>
+		<p><?php echo $article["content"]; ?></p>
+		
+	<?php } ?>
+
 
 </main>
 
