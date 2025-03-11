@@ -30,19 +30,6 @@ $articles = [
 	]
 ];
 
-$descriptionBlog = "Une description un peu longue de mon blog. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex amet quia officia odit cum";
-
-
-function displayText($textToDisplay) {
-
-	if(strlen($textToDisplay) > 20) {
-		echo "...";
-	 } else {
-		echo $textToDisplay;
-	 }
-
-}
-
 
 ?>
 
@@ -51,21 +38,15 @@ function displayText($textToDisplay) {
 
 	<h1>Le blog de Roberto</h1>
 
-	<h2><?php displayText($descriptionBlog); ?></h2>
-
+	<h2>Sous titre</h2>
 
 	<?php foreach($articles as $article) { ?>
 
-	<!-- j'utilise la clé title pour afficher la valeur du titre dans le tableau -->
-
-		<?php displayText($article['title']); ?>
+		<h2><?php echo $article["title"]; ?></h2>
 
 		<p><?php echo $article["content"]; ?></p>
 		
 	<?php } ?>
-
-	
-
 
 </main>
 
