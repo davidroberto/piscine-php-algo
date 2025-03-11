@@ -31,6 +31,24 @@ $articles = [
 ];
 
 
+// je créé une fonction nommée cutText
+// cette fonction prend un parametre nommé textToCut
+function cutText($textToCut) {
+
+	// je vérifie la taille du parametre textToCut
+	// s'il fait plus de 5 caractères
+	if (strlen($textToCut) > 5) {
+		// je récupère que les 5 premiers caractères du texte et j'ajoute "..." à la fin
+		echo substr($textToCut, 0, 5) . "...";
+	} else {
+		// sinon (s'il fait moins de 10 caractères) j'affiche le texte en entier
+		echo $textToCut;
+	}
+	
+}
+
+
+
 ?>
 
 
@@ -42,7 +60,8 @@ $articles = [
 
 	<?php foreach($articles as $article) { ?>
 
-		<h2><?php echo $article["title"]; ?></h2>
+		<!--j'appelle la fonction cutText, en lui en passant en prametre le titre de l'article  -->
+		<h2><?php cutText($article["title"]); ?></h2>
 
 		<p><?php echo $article["content"]; ?></p>
 		
